@@ -211,7 +211,7 @@ def tip():
 
 # 推送信息
 def send_message(to_user, access_token, city_name, weather, max_temperature, min_temperature, pipi, lizhi, pop, tips,
-                 note_en, note_ch, health_tip, lucky_):
+                 note_en, note_ch, health_tip, lucky_, ):
     url = "https://api.weixin.qq.com/cgi-bin/message/template/send?access_token={}".format(access_token)
     week_list = ["星期日", "星期一", "星期二", "星期三", "星期四", "星期五", "星期六"]
     year = localtime().tm_year
@@ -226,12 +226,12 @@ def send_message(to_user, access_token, city_name, weather, max_temperature, min
     love_date = date(love_year, love_month, love_day)
     # 获取在一起的日期差
     love_days = str(today.__sub__(love_date)).split(" ")[0]
-    mon = 2
+    mon = 11
     yea = year
     # 如果过了今年，跳到下一年
     if month > mon:
         yea += 1
-    future = datetime.strptime('%d-0%d-07 00:00:00' % (yea, mon), '%Y-%m-%d %H:%M:%S')
+    future = datetime.strptime('%d-%d-08 00:00:00' % (yea, mon), '%Y-%m-%d %H:%M:%S')
     # 当前时间
     now = datetime.now()
     # 时间差
